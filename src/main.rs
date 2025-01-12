@@ -26,7 +26,7 @@ fn main() {
         format!("{} ", args.language)
     };
     // Format for search
-    let url = format!("https://www.google.com/search?q={}{}+site:stackoverflow.com+OR+site:reddit.com", language_query, args.query);
+    let url = format!("https://www.google.com/search?q={}{}+site:stackoverflow.com+OR+site:reddit.com+OR+site:stackexchange.com+OR+medium.com", language_query, args.query);
 
     // Attempt to open URL
     if webbrowser::open(&url).is_ok() {
