@@ -1,12 +1,17 @@
-extern crate clap;
-use clap::{Parser, Arg};
+use clap::Parser;
 use open;
 
-fn parse_args() -> clap::ArgMatches {
+#[derive(Parser)]
+#[command(author = "Mike Oleshchuk", version = "0.1.0", about = "Demo", long_about = None)]
+struct Cli {
+    input: String,
 
 }
 
 fn main() {
-    
+    let args = Cli::parse();
+
+    // Get input
+    println!("Input: {}", args.input);
 
 }
