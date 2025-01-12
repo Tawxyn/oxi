@@ -8,20 +8,29 @@ use webbrowser;
 struct Cli {
     query: String,
 
-    #[arg(default_value = "general")]
+    #[arg(default_value = "general", required = false)]
     language: String,
 
-    #[arg(default_value = "focus")]
+    #[arg(default_value = "focus", required = false)]
     command: String,
 
 }
 
 fn main() {
+    // Initalize CLI tool with clap
     let args = Cli::parse();
-    let url = format!("https://www.google.com/search?q={}+site:stackoverflow.com+OR+site:reddit.com", args.query);
-    // Get input
+    
+    let language_query = if args.language == "general" {
+        "".to_string()
+    } else {
+        format!("{} ", args.language)
+    };
+    // Format for search
+    let url = format!("https://www.google.com/search?q={}{}+site:stackoverflow.com+OR+site:reddit.com", language_query, args.query);
+
+    // Attempt to open URL
     if webbrowser::open(&url).is_ok() {
-        println!("Opened: {}", args.query);
+        println!("Opened: {}", args.query); 
     } else {
         println!("Failed to open query");
     }
