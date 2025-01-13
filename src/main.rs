@@ -1,5 +1,4 @@
 use clap::{Parser, ValueEnum};
-use webbrowser;
 
 
 #[derive(Parser)]
@@ -34,8 +33,18 @@ fn main() {
     } else {
         format!("{} ", args.language)
     };
-    // Format for search
-    let url = format!("https://www.google.com/search?q={}{}+site:stackoverflow.com+OR+site:reddit.com+OR+site:stackexchange.com+OR+medium.com", language_query, args.query);
+
+    // Search URL based on command type
+    let url = match args.command {
+        SearchType::Focus => format!(
+            "https://www.google.com/search?q={}{}+site:medium.com.com+OR+site:reddit.com+OR+site:stackexchange.com+OR+site:stackoverflow.com",
+            language_query, args.query
+        ),
+        SearchType::Broad => format!(
+            "https://www.google.com/search?q={}{}",
+            language_query, args.query
+        ), 
+    };
 
     // Attempt to open URL
     if webbrowser::open(&url).is_ok() {
