@@ -22,6 +22,7 @@ struct Cli {
 enum SearchType {
     Focus,
     Broad,
+    Video,
 }
 
 fn main() {
@@ -43,7 +44,10 @@ fn main() {
         SearchType::Broad => format!(
             "https://www.google.com/search?q={}{}",
             language_query, args.query
-        ), 
+        ),
+        SearchType::Video => format!(
+            "https://www.youtube.com/search"
+        )
     };
 
     // Attempt to open URL
