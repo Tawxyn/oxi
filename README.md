@@ -10,3 +10,20 @@ Oxi is a lightweight command-line interface (CLI) tool designed to streamline in
 - Quick URL Opening: Automatically opens the search in your default web browser.
 
 ## Installation
+1. Ensure you have Rust and Cargo installed. If not, install them from [rustup.rs.](https://rustup.rs/).
+2. Clone this repository:
+```bash
+git clone https://github.com/Tawxyn/oxi.git
+```
+3. Navigate to the project directory:
+```bash
+cd oxi
+```
+4. Build the project:
+```bash
+cargo build --release
+```
+5. (Optional) Install the tool globally:
+```bash
+cargo install --path .
+```
