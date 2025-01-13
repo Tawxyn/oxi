@@ -11,6 +11,7 @@ Oxi is a lightweight command-line interface (CLI) tool designed to streamline in
 
 ## Installation
 1. Ensure you have Rust and Cargo installed. If not, install them from [rustup.rs.](https://rustup.rs/).
+ <br>
 2. Clone this repository:
 ```bash
 git clone https://github.com/Tawxyn/oxi.git
@@ -26,4 +27,34 @@ cargo build --release
 5. (Optional) Install the tool globally:
 ```bash
 cargo install --path .
+```
+
+## Usage
+```bash
+oxi <QUERY> [LANGUAGE] [COMMAND]
+```
+### Arguments
+
+- <QUERY>: The main search query (required).
+
+- [LANGUAGE]: The programming language to filter results (optional; defaults to general).
+
+- [COMMAND]: The type of search to perform (optional; defaults to focus).
+
+- focus: Searches within programming-related platforms.
+
+- broad: Performs a general web search.
+
+### Examples
+- Seach for ownership issues:
+```bash
+oxi "ownership issues"
+```
+- Search for Rust syntax errors:
+```bash
+oxi "syntax error" rust
+```
+- Perform a broad search for Python memory leaks:
+```bash
+oxi "memory leak" python broad
 ```
