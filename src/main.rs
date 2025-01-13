@@ -1,4 +1,4 @@
-use clap::Parser;
+use clap::{Parser, ValueEnum};
 use webbrowser;
 
 
@@ -6,14 +6,23 @@ use webbrowser;
 #[command(author = "Mike Oleshchuk", version = "0.1.0", about = "Oxi a tool to search the internet for 
         related programming and bug articles and websites.", long_about = None)]
 struct Cli {
+    // Main query to search for
     query: String,
 
+    // Language filter
     #[arg(default_value = "general", required = false)]
     language: String,
 
-    #[arg(default_value = "focus", required = false)]
-    command: String,
+    // Search type
+    #[arg(default_value = "focus", value_enum)]
+    command: SearchType,
 
+}
+
+#[derive(ValueEnum, Clone)]
+enum SearchType {
+    Focus,
+    Broad,
 }
 
 fn main() {

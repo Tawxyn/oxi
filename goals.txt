@@ -1,5 +1,5 @@
 Basic Search Functionality:
-Allow users to search multiple programming-related sites like Stack Overflow and Reddit using a query provided via the command line.
+Allow users to search multiple programming-related sites like Stack Overflow and Reddit, etc, etc using a query provided via the command line.
 
     Example: oxi --language rust "ownership issues"
 
