@@ -46,6 +46,8 @@ oxi <QUERY> [LANGUAGE] [COMMAND]
 
     - broad: Performs a general web search.
 
+    - video: Searches within youtube.
+
 ### Examples
 - Seach for ownership issues:
 ```bash
