@@ -46,8 +46,8 @@ fn main() {
             language_query, args.query
         ),
         SearchType::Video => format!(
-            "https://www.youtube.com/search"
-        )
+            "https://www.youtube.com/results?search_query={}{}", language_query, args.query
+        ),
     };
 
     // Attempt to open URL
