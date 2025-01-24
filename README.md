@@ -1,6 +1,6 @@
 # oxi
 
-Oxi is a lightweight command-line interface (CLI) tool designed to streamline internet searches for programming-related questions, bugs, or articles. Built with Rust, it allows users to quickly query multiple developer-focused platforms directly from their terminal.
+Oxi is a short script command-line interface (CLI) tool designed to streamline internet searches for programming-related questions, bugs, or articles. Built with Rust, it allows users to quickly query multiple developer-focused platforms directly from their terminal.
 
 ## Features
 - Focus and Broad Search Modes: Search specifically within popular programming platforms or across the web.
